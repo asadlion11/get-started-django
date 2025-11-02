@@ -1,0 +1,21 @@
+# Environment files
+.env
+.env.*    # ignores .env.local, .env.production, etc.
+
+# Python / Django
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.sqlite3
+
+# Django
+*.log
+/staticfiles/
+/media/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
