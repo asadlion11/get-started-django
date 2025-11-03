@@ -1,0 +1,17 @@
+{% if latest_question_list %}
+    <ol>
+        {% for question in latest_question_list %}
+        <li>
+            <a href="/polls/{{question.id}}/">{{question.question_text}}
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+{% else %}
+    <p>No polls are available</p>
+{% endif %}
+
+{% if developer_name %}
+    <p style="background-color:#000; color:#fff; margin:12px 0 0; font-size:20px">Developed by: {{developer_name}}</p>
+{% endif %}
+
