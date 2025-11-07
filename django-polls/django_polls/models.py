@@ -1,6 +1,7 @@
 from django.db import models
 import  datetime
 from django.utils import timezone
+from django.contrib import admin
 
 # Create your models here.
 # we’ll create two models: Question and Choice. A Question has a question and a publication date. A Choice has two fields: the text of the choice and a vote tally. Each Choice is associated with a Question.
@@ -14,6 +15,14 @@ class Question(models.Model):
     # If you don’t supply one, Django auto-generates a readable name
     def __str__(self):
         return self.question_text
+    
+    # display() decorator
+    @admin.display(
+        boolean=True, 
+        ordering="pub_date",
+        description="Published recently?",
+    )
+    
     
     def was_published_recently(self):
         now = timezone.now()
